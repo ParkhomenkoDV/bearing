@@ -15,7 +15,7 @@ setup(
     long_description_content_type='text/markdown',  # если long_description = .md
     author='Daniil Andryushin',
     author_email='',
-    url='https://github.com/ParkhomenkoDV/gte.git',
+    url='https://github.com/ParkhomenkoDV/bearing.git',
     packages=find_packages(),
     python_requires='>=3.8',
     install_requires=install_requires,
