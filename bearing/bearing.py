@@ -9,6 +9,10 @@ REFERENCES = MappingProxyType({
     2: '''Подшипники приводов: учебное пособие / 
     [М.М. Ермолаев и др.]; под ред. А.С. Иванова. - 
     Москва: Издательство МГТУ им. Н.Э. Баумана, 2019. - 198, [2] с.: ил''',
+    3: '''Детали машин: учебник для вузов /
+    [Л.А. Андриенко, Д38 Б.А. Байков, М.Н. Захаров и др.]; под ред. О.А. Ряховского. -
+    4-е изд., перераб. и доп. - 
+    Москва: Издательство МГТУ им. Н.Э. Баумана, 2014. - 465, [7] с.: ил''',
 })
 
 
@@ -39,12 +43,12 @@ class Bearing:
     def type(self) -> tuple[int, str]:
         return self.__type, Bearing.BEARING_TYPES[self.__type]
 
-    def number_rolling_elements(self, d, D) -> int:
+    def number_rolling_elements(self, d, D) -> tuple[int, str]:
         """Количество тел качения [2, с. 56]"""
-        if self.__type == -1: return 0
+        if self.__type == -1: return 0, ''
         number_rolling_elements = pi * self.circumference_diameter_rolling_elements(d, D)
         number_rolling_elements /= self.diameter_rolling_elements(d, D) * array([1.2, 1.6])
-        return number_rolling_elements
+        return number_rolling_elements, ''
 
     def diameter_rolling_elements(self, d, D):
         """Диаметр тел качения [2, с. 56]"""
