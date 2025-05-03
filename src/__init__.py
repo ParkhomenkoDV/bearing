@@ -1,1 +1,1 @@
-from . import Bearing
+from .bearing import Bearing
