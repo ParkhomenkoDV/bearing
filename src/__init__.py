@@ -1,1 +1,1 @@
-from src import Bearing
+from . import Bearing
